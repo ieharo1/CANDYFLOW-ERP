@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-header fw-bold">Lotes de producción y costos</div>
+  <div class="card-body table-responsive">
+    <table class="table table-striped">
+      <thead><tr><th>Lote</th><th>Dulce</th><th>Fecha</th><th>Cantidad</th><th>Costo total</th><th>Costo unitario</th></tr></thead>
+      <tbody>
+      {% for b in batches %}
+        <tr><td>{{ b.code }}</td><td>{{ b.candy.name }}</td><td>{{ b.production_date }}</td><td>{{ b.quantity_produced }}</td><td>${{ b.total_cost }}</td><td>${{ b.unit_cost|floatformat:2 }}</td></tr>
+      {% empty %}<tr><td colspan="6">Sin lotes.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

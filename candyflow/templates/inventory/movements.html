@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-header fw-bold">Movimientos de inventario</div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered">
+      <thead><tr><th>Fecha</th><th>Dulce</th><th>Tipo</th><th>Cantidad</th><th>Lote</th><th>Nota</th></tr></thead>
+      <tbody>
+      {% for m in movements %}
+      <tr><td>{{ m.created_at }}</td><td>{{ m.candy.name }}</td><td><span class="badge {% if m.movement_type == 'IN' %}text-bg-success{% else %}text-bg-danger{% endif %}">{{ m.get_movement_type_display }}</span></td><td>{{ m.quantity }}</td><td>{{ m.batch.code|default:'-' }}</td><td>{{ m.note }}</td></tr>
+      {% empty %}<tr><td colspan="6">Sin movimientos.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

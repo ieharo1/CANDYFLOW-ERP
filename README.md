@@ -1,31 +1,10 @@
-# 💻 Windows Forms C#
+# Windows-Forms-CSharp
 
-Aplicaciones de escritorio Windows Forms desarrolladas por **Isaac Esteban Haro Torres**.
+Este repositorio ahora incluye un sistema completo en Django para venta de dulces en:
 
----
+- `candyflow/`
 
-## 📝 Descripción
+Ver documentación completa en `candyflow/README.md`.
 
-Proyectos de escritorio usando Windows Forms con C#.
 
----
-
-## 🛠️ Stack Tecnológico
-
-- C#
-- Windows Forms
-
----
-
-## 👨‍💻 Desarrollado por Isaac Esteban Haro Torres
-
-**Ingeniero en Sistemas · Full Stack · Automatización · Data**
-
-- 📧 Email: zackharo1@gmail.com
-- 📱 WhatsApp: 098805517
-- 💻 GitHub: https://github.com/ieharo1
-- 🌐 Portafolio: https://ieharo1.github.io/portafolio-isaac.haro/
-
----
-
-© 2026 Isaac Esteban Haro Torres - Todos los derechos reservados.
+Para generar el ZIP local sin versionar binarios, usa `candyflow/scripts_make_zip.sh`.
