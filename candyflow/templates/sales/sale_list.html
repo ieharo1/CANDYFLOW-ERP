@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% for sale in sales %}
+<div class="card shadow-sm mb-3">
+  <div class="card-header d-flex justify-content-between">
+    <span class="fw-bold">Pedido {{ sale.order_number }}</span>
+    <span>{{ sale.customer_name }} - {{ sale.sold_at }}</span>
+  </div>
+  <div class="card-body table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Dulce</th><th>Cantidad</th><th>P. Venta</th><th>C. Unitario</th><th>Margen</th></tr></thead>
+      <tbody>
+      {% for item in sale.items.all %}
+      <tr><td>{{ item.candy.name }}</td><td>{{ item.quantity }}</td><td>${{ item.unit_price }}</td><td>${{ item.unit_cost_snapshot }}</td><td>${{ item.margin }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% empty %}
+<div class="alert alert-info">Sin ventas registradas.</div>
+{% endfor %}
+{% endblock %}

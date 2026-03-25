@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="row g-3 mb-3">
+  <div class="col-12 col-md-6 col-xl-3"><div class="card shadow-sm"><div class="card-body"><h6>Lotes</h6><h3>{{ total_batches }}</h3></div></div></div>
+  <div class="col-12 col-md-6 col-xl-3"><div class="card shadow-sm"><div class="card-body"><h6>Costo Producción</h6><h3>${{ total_production_cost }}</h3></div></div></div>
+  <div class="col-12 col-md-6 col-xl-3"><div class="card shadow-sm"><div class="card-body"><h6>Ingresos</h6><h3>${{ revenue }}</h3></div></div></div>
+  <div class="col-12 col-md-6 col-xl-3"><div class="card shadow-sm"><div class="card-body"><h6>Utilidad Bruta</h6><h3>${{ gross_profit }}</h3></div></div></div>
+</div>
+<div class="card shadow-sm">
+  <div class="card-header fw-bold">Stock actual</div>
+  <div class="card-body table-responsive">
+    <table class="table table-striped align-middle">
+      <thead><tr><th>Dulce</th><th>Stock</th></tr></thead>
+      <tbody>
+      {% for candy, qty in inventory_balance.items %}
+        <tr><td>{{ candy }}</td><td>{{ qty }}</td></tr>
+      {% empty %}
+        <tr><td colspan="2">Sin movimientos registrados.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
