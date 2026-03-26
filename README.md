@@ -146,10 +146,6 @@ python manage.py seed_demo
 python manage.py runserver
 ```
 
----
-
----
-
 ## 👨‍💻 Desarrollado por Isaac Esteban Haro Torres
 
 **Ingeniero en Sistemas · Full Stack Developer · Automatización · Data**
